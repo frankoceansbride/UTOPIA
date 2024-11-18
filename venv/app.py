@@ -22,7 +22,7 @@ def get_countries():
 @app.route('/api/weather', methods=['GET'])
 def get_weather():
     city = request.args.get('city')
-    api_key = "YOUR_OPENWEATHER_API_KEY"  # Replace with your OpenWeather API key
+    api_key = "OPENWEATHER_API_KEY"  # Replace with your OpenWeather API key
     try:
         weather_response = requests.get(
             f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}'
@@ -37,7 +37,7 @@ def get_weather():
 def get_currency_rate():
     base_currency = request.args.get('base')
     target_currency = request.args.get('target')
-    api_key = "YOUR_EXCHANGERATE_API_KEY"  # Replace with your ExchangeRate API key
+    api_key = "EXCHANGERATE_API_KEY"  # Replace with your ExchangeRate API key
     try:
         currency_response = requests.get(
             f'https://v6.exchangerate-api.com/v6/{api_key}/pair/{base_currency}/{target_currency}'
